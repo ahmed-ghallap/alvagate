@@ -1,0 +1,224 @@
+<!-- بسم الله -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ resturant.name }}</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./normalize.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css">
+</head>
+<body>
+    <!--
+     TODO:
+        1- favicon
+        -->
+    <div class="side-nav open">
+        <ul class="nav">
+            <li >
+                <a class="active" href="">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Menu</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="copyright">
+            <img class="shadow" src="./media/alvagate.jpg" alt="logo for alvagate co">
+            <p> Copyright © 2024<br>Powered by Alvagate</p>
+        </div>
+    </div>
+    <main>
+        <!-- start navbar -->
+        <nav class="container navbar">
+            <img class="shadow" src="./media/res.logo.png" alt="" class="logo">
+
+            <div class="left">
+                <button class="btn shadow lang-chooser" >عربي</button>
+                <i class="fa-solid fa-xl fa-circle-half-stroke"></i>
+                <i id="nav-btn" class="fa-solid fa-xl fa-bars-staggered"></i>
+            </div>
+        </nav>
+        <!-- End navbar -->
+
+        <!-- start category nav  -->
+        <nav class="container category-nav">
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/star.png" alt="" > 
+            </span>
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food1.jpg" alt="" > 
+            </span>
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food2.jpg" alt="" > 
+            </span>
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food3.jpg" alt="" > 
+            </span>
+
+
+
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food4.jpg" alt="" > 
+            </span>
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food5.jpg" alt="" > 
+            </span>
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food6.jpg" alt="" > 
+            </span>
+            <span class="shadow item">
+                <span class="no-select">category</span>
+                <img src="./media/food2.jpg" alt="" > 
+            </span>
+
+        </nav>
+        <!-- end category nav  -->
+
+        <!-- start Results   -->
+        <div class="container results ">
+            <div class="result-bar" >
+                <span class="shadow left">
+                    Result <span class="badge">5</span>
+                </span>
+                <span class="right">
+                    <i class="active fa-solid fa-grip-vertical fa-lg"></i>
+                    <i class="fa-solid fa-list fa-flip-horizontal fa-lg"></i>
+                </span>
+            </div>
+            <div class=" cards-holder">
+
+                <div class="shadow card col">
+                    <img src="./media/food1.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shadow card col">
+                    <img src="./media/food2.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow card col">
+                    <img src="./media/food3.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow card col">
+                    <img src="./media/food4.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow card col">
+                    <img src="./media/food5.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow card col">
+                    <img src="./media/food6.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow card col">
+                    <img src="./media/food2.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow card col">
+                    <img src="./media/food3.jpg" alt="">
+                    <div class="content">
+                        <h3>Tea very lovely</h3>
+                        <span>500 <small>EGP</small></span>
+                        <div class="counter">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Results   -->
+        
+        <nav class="bottom-nav">
+            <div class="cart">
+                <span>5</span>
+                <i class="cart fa-solid fa-cart-shopping fa-xl"></i>
+            </div>
+            <div class="shadow logo">
+                <img  src="./media/res.logo.png" alt="">
+            </div>
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+
+        </nav>
+
+    </main>
+
+    <script src="./action.js"></script>
+</body>
+</html>
