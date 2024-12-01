@@ -1,4 +1,6 @@
 /* بسم الله */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 *,
 *::after, 
 *::before {
@@ -39,6 +41,7 @@ img {
     --clr-900-25 : rgba(26, 40, 142, 0.25);
     --clr-950 : #151a56;
     --clr-950-50 : #151a5680;
+    --clr-950-75 : #151a56bf;
 }
 
 .no-select, h3, span, p, a {
@@ -107,7 +110,7 @@ img {
 
 .app {
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     overflow: hidden;
     width: 100vw;
     height: 100dvh;
@@ -347,6 +350,27 @@ main .navbar .left * {
     padding-bottom: 4.5rem;
 }
 
+.card .calory {
+    display: inline-block;
+    position: absolute;
+    padding: 4px 5px;
+    border-radius: 5px;
+
+    color: #EF4444;
+    background-color: #fee2e2;
+    font-size: .8rem;
+    font-weight: bolder;
+}
+.card .calory .fa-solid {
+    display: inline-block;
+    padding-left: .3rem;
+    text-shadow: 
+    0 0 2px white,
+    0 0 4px red,
+    0 0 6px yellow;
+    font-size: 1rem;
+}
+
 .cards-holder.list .card .calory, 
 .cards-holder.list .card .counter
 {
@@ -358,19 +382,12 @@ main .navbar .left * {
     right: .5rem;
 }
 .cards-holder.list .card .calory {
-    display: inline-block;
-    position: absolute;
     bottom: .5rem;
     left: calc(.7rem + 100px);
     transform: translateY(-50%);
-    padding: 3px 4px;
-    border-radius: 5px;
-    color: #EF4444;
-    background-color: #fee2e2;
-    font-size: .8rem;
 }
 .cards-holder.list .card .content{
-    padding: 1rem .7rem;
+    padding: .6rem .6rem;
     background-color: var(--clr-900);
     color: var(--clr-50);
     width: 100%;
@@ -378,7 +395,7 @@ main .navbar .left * {
 .cards-holder.list.dark .card .content{
     background-color: var(--clr-950);
 }
-.cards-holder .card .content h3{
+.cards-holder.list .card .content h3{
     font-size: 1rem;
     margin-bottom: 2px;
 }
@@ -408,30 +425,28 @@ main .navbar .left * {
     border-radius: 10px;
     overflow: hidden;
 }
-.cards-holder.grid .card .calory {
-    display: inline-block;
-    position: absolute;
-    right: 0;
+.cards-holder.grid .card  .calory {
+    /* display: block;
+    width: fit-content; */
+    /* position: static; */
     top: 50%;
+    right: 0;
     transform: translateY(-50%);
-    padding: 3px 4px;
-    border-radius: 5px;
-    color: #EF4444;
-    background-color: #fee2e2;
-    font-size: .8rem;
+    margin-block: .3rem;
 }
 .cards-holder.grid .card .content {
     position: absolute; 
     bottom: 0;
     width: 100%;
     height: max-content;
-    padding-inline-start: .4rem;
-    padding-block: .4rem 1.2rem;
+    /* padding-inline-start: .4rem; */
+    padding: .4rem .4rem;
+    padding-bottom: 1.1rem;
     -webkit-backdrop-filter: blur(3px); /* دعم للمتصفحات القديمة */
     backdrop-filter: blur(3px); /* تطبيق الضبابية */
     background: linear-gradient(
         to right,
-        var(--clr-950-50),
+        var(--clr-950-75),
         rgba(0, 0, 0, 0) 
     );
     color: var(--clr-50)
@@ -445,16 +460,16 @@ main .navbar .left * {
 .cards-holder.grid .card img:empty{
     background-color: var(--clr-500);
 }
-
-.cards-holder .gird .card h3 {
-    font-size: 1rem ;
+.cards-holder.grid .card h3 {
+    font-size: 1rem;
+    margin-bottom: -1px ;
 }
 .cards-holder.grid .card .content span {
     font-size: .8rem;
 }
 .cards-holder.grid .card .content .counter {
     position: absolute;
-    bottom: .5rem;
+    bottom: .35rem;
     right: .5rem;
 }
 

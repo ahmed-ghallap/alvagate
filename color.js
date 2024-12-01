@@ -84,6 +84,7 @@ if (!colorCode || !/^([0-9A-Fa-f]{6})$/.test(colorCode)) {
     // إضافة التدرجات الشفافة
     root.style.setProperty("--clr-900-25", `rgba(${parseInt(shades[900].slice(4, 7))}, ${parseInt(shades[900].slice(8, 11))}, ${parseInt(shades[900].slice(12, 15))}, 0.25)`);
     root.style.setProperty("--clr-950-50", `${shades[950]}80`);
+    root.style.setProperty("--clr-950-75", `${shades[950]}40`);
 
     console.log("Generated shades:", shades);
 }
