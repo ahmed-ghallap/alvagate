@@ -444,11 +444,8 @@ main .navbar .left * {
     padding-bottom: 1.1rem;
     -webkit-backdrop-filter: blur(3px); /* دعم للمتصفحات القديمة */
     backdrop-filter: blur(3px); /* تطبيق الضبابية */
-    background: linear-gradient(
-        to right,
-        var(--clr-950-75),
-        rgba(0, 0, 0, 0) 
-    );
+    background: linear-gradient(to top right, var(--clr-950-75) 35%, rgba(0, 0, 0, 0));
+
     color: var(--clr-50)
 }
 .cards-holder.grid .card img {
