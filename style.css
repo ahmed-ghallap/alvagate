@@ -458,7 +458,7 @@ main .navbar .left * {
     background-color: var(--clr-500);
 }
 .cards-holder.grid .card h3 {
-    font-size: 1rem;
+    font-size: .9rem;
     margin-bottom: -1px ;
 }
 .cards-holder.grid .card .content span {
@@ -534,4 +534,5 @@ main .navbar .left * {
     background-color: red;
 }
 /* ================== End bottom nav  ================== */
+
 

@@ -1,0 +1,545 @@
+/* بسم الله */
+/* تحميل الخطوط باستخدام CSS خام */
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
+
+
+
+// متغيرات الألوان
+:root {
+  --white: #fff;
+  --black: #000;
+  --clr-50: #eef3ff;
+  --clr-100: #dae4ff;
+  --clr-200: #bdd1ff;
+  --clr-300: #90b4ff;
+  --clr-400: #4d82ff;
+  --clr-500: #3563fc;
+  --clr-600: #1f41f1;
+  --clr-700: #172dde;
+  --clr-800: #1927b4;
+  --clr-900: #1a278e;
+  --clr-900-25: rgba(26, 40, 142, 0.25);
+  --clr-950: #151a56;
+  --clr-950-50: #151a5680;
+  --clr-950-75: #151a56bf;
+}
+
+// إعادة ضبط عامة
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// خصائص المدخلات
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// الصور
+img {
+  display: inline-block;
+}
+
+// مزيج لمنع تحديد النصوص
+@mixin no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+// تطبيق المزيج
+.no-select,
+h3,
+span,
+p,
+a {
+  @include no-select;
+}
+
+// الأزرار العامة
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+// العداد
+.counter {
+  display: flex;
+  height: max-content;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bolder;
+  background-color: var(--clr-700);
+  border: 2px solid var(--clr-700);
+
+  .plus,
+  .minus,
+  .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+    background-color: transparent;
+    color: var(--white);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+
+    &:hover,
+    &:active {
+      background-color: var(--clr-100);
+      color: var(--clr-700);
+    }
+  }
+
+  .num {
+    all: unset;
+    color: var(--clr-100);
+    width: 2rem;
+    text-align: center;
+  }
+
+  .minus,
+  .num {
+    display: none;
+  }
+}
+
+// التظليل
+.shadow {
+  box-shadow: 0 4px 4px 0 var(--clr-900-25);
+}
+
+// التطبيق
+.app {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  width: 100vw;
+  height: 100dvh;
+}
+
+// الشريط الجانبي
+.side-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  color: var(--white);
+  background-color: var(--clr-800);
+
+  &.dark {
+    background-color: var(--clr-900);
+  }
+
+  ul.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    font-size: 1.1rem;
+    width: max-content;
+    padding-inline-start: 20vw;
+    padding-top: 10vh;
+
+    a {
+      display: inline-block;
+      width: max-content;
+      padding: 8px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--white);
+
+      &.active,
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: var(--clr-600);
+      }
+
+      .fa-solid {
+        display: inline-block;
+        margin-inline-end: 1.2rem;
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 1rem;
+    transform: translateY(-100%);
+    text-align: center;
+    font-size: 0.8rem;
+
+    img {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      width: 60px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}
+
+// الأقسام الرئيسية
+main {
+  position: relative;
+  transition: 500ms;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100vw;
+  background: var(--clr-50) url('./media/bg.jpg') no-repeat center center / cover;
+  overflow: scroll;
+
+  &.dark {
+    background: linear-gradient(rgba(0, 0, 0, 0), var(--clr-950) 80%),
+      var(--clr-50) url('./media/bg.jpg') no-repeat center center / cover;
+  }
+
+  &.small {
+    top: 50vh;
+    left: 45vw;
+    border-radius: 24px;
+    outline: 14px solid var(--clr-600);
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    height: max-content;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    img {
+      object-fit: cover;
+      background-color: var(--clr-50);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .left {
+      margin-left: auto;
+
+      .btn {
+        border-radius: 5px;
+        height: 100%;
+        padding: 5px 9px;
+        color: var(--black);
+        background-color: var(--white);
+      }
+
+      * {
+        display: inline-block;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+/* ================== المتغيرات ================== */
+    
+$white: var(--white);
+$black: var(--black);
+$clr-50: var(--clr-50);
+$clr-100: var(--clr-100);
+$clr-200: var(--clr-200);
+$clr-300: var(--clr-300);
+$clr-400: var(--clr-400);
+$clr-500: var(--clr-500);
+$clr-600: var(--clr-600);
+$clr-700: var(--clr-700);
+$clr-800: var(--clr-800);
+$clr-900: var(--clr-900);
+$clr-950: var(--clr-950);
+$clr-950-50: var(--clr-950-50);
+$clr-950-75: var(--clr-950-75);
+
+
+/* ================== مزايا عامة ================== */
+@mixin no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+}
+
+@mixin blur($amount) {
+  backdrop-filter: blur($amount);
+  -webkit-backdrop-filter: blur($amount);
+}
+
+/* ================== تصنيفات ================== */
+.category-nav {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  @include blur(5px);
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-block: 0.5rem;
+  overflow-x: scroll;
+  @include no-scrollbar;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 4px 3px 8px;
+    color: $clr-950;
+    background-color: $clr-50;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    width: max-content;
+
+    &:hover,
+    &.active {
+      color: $clr-50;
+      background-color: $clr-500;
+    }
+
+    img {
+      width: 35px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+
+      &:empty {
+        background-color: $clr-950;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+/* ================== النتائج ================== */
+.results {
+  height: 100%;
+
+  .result-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .left {
+      display: inline-block;
+      padding: 7px;
+      border-radius: 7px;
+      background-color: $clr-50;
+      color: $black;
+
+      .badge {
+        display: inline-block;
+        padding: 1px 7px;
+        border-radius: 5px;
+        background-color: $clr-100;
+        color: $clr-500;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-inline: 1rem;
+      border-radius: 0.5rem;
+      color: $black;
+      background-color: $clr-50;
+
+      .fa-solid {
+        &:hover,
+        &:active,
+        &:focus,
+        &.active {
+          color: $clr-600;
+        }
+      }
+    }
+  }
+}
+
+/* البطاقات */
+.cards-holder {
+  &.list {
+    .card {
+      position: relative;
+      display: flex;
+      overflow-x: hidden;
+      max-width: 100%;
+      padding-block: 0.4rem;
+      border-radius: 1rem;
+
+      &:last-child {
+        padding-bottom: 4.5rem;
+      }
+
+      .calory {
+        display: inline-block;
+        position: absolute;
+        padding: 4px 5px;
+        border-radius: 5px;
+        color: #ef4444;
+        background-color: #fee2e2;
+        font-size: 0.8rem;
+        font-weight: bolder;
+
+        .fa-solid {
+          padding-left: 0.3rem;
+          text-shadow: 0 0 2px $white, 0 0 4px red, 0 0 6px yellow;
+          font-size: 1rem;
+        }
+      }
+
+      .content {
+        padding: 0.6rem;
+        background-color: $clr-900;
+        color: $clr-50;
+        width: 100%;
+
+        h3 {
+          font-size: 1rem;
+          margin-bottom: 2px;
+        }
+
+        span {
+          font-size: 0.9rem;
+          font-weight: bolder;
+        }
+      }
+
+      img {
+        height: 100px;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 4.3rem;
+
+    .card {
+      flex: 0 0 calc(50% - 0.5rem);
+      aspect-ratio: 1;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 0.4rem;
+        background: linear-gradient(to top right, $clr-950-75 35%, rgba(0, 0, 0, 0));
+        @include blur(3px);
+        color: $clr-50;
+
+        h3 {
+          font-size: 1rem;
+          margin-bottom: -1px;
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+
+      img {
+        height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+
+        &:empty {
+          background-color: $clr-500;
+        }
+      }
+    }
+  }
+}
+
+/* ================== الشريط السفلي ================== */
+.bottom-nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0px;
+  width: 100%;
+  z-index: 3;
+  background-color: $clr-700;
+  color: $white;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+
+  &.dark {
+    background-color: $clr-900;
+  }
+
+  .fa-solid {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    top: -20px;
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      background-color: $clr-50;
+      outline: 5px solid $clr-400;
+    }
+  }
+
+  .cart {
+    position: relative;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 5px;
+      right: 12px;
+      padding: 1px 5px;
+      border-radius: 50%;
+      background-color: red;
+      outline: 1px solid $white;
+    }
+  }
+}
