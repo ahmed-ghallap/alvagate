@@ -82,9 +82,11 @@ if (!colorCode || !/^([0-9A-Fa-f]{6})$/.test(colorCode)) {
     });
 
     // إضافة التدرجات الشفافة
-    root.style.setProperty("--clr-900-25", `rgba(${parseInt(shades[900].slice(4, 7))}, ${parseInt(shades[900].slice(8, 11))}, ${parseInt(shades[900].slice(12, 15))}, 0.25)`);
-    root.style.setProperty("--clr-950-50", `${shades[950]}80`);
-    root.style.setProperty("--clr-950-75", `${shades[950]}40`);
+    root.style.setProperty(`--clr-900-25`, `${shades[900].replace("hsl", "hsla").replace(")", ", 0.25)")}`);
+    root.style.setProperty(`--clr-950-50`, `${shades[950].replace("hsl", "hsla").replace(")", ", 0.5)")}`);
+    root.style.setProperty(`--clr-950-75`, `${shades[950].replace("hsl", "hsla").replace(")", ", 0.75)")}`);
+
 
     console.log("Generated shades:", shades);
 }
+
