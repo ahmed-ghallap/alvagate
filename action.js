@@ -32,6 +32,8 @@ darkBtn.addEventListener('click', (e) => {
     sideNav.classList.toggle('dark');
     main.classList.toggle('dark');
     cardsHolder.classList.toggle('dark');
+    navBtn.classList.toggle('dark');
+    darkBtn.classList.toggle('dark');
 });
 
 
@@ -119,3 +121,7 @@ listBtn.addEventListener('click', () => {
     cardsHolder.classList.remove('grid')
     console.log('list')
 });
+
+document.querySelector('.color-chooser').addEventListener('change', (e) => {
+    Palate(e.target.value)
+})

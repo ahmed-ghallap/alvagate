@@ -67,26 +67,29 @@ function generateShades(baseColor) {
 
 // الحصول على اللون من URL
 const urlParams = new URLSearchParams(window.location.search);
-const colorCode = urlParams.get("color");
+let colorCode = urlParams.get("color"); 
+colorCode = '#' + colorCode
 
-// التحقق من اللون
-if (!colorCode || !/^([0-9A-Fa-f]{6})$/.test(colorCode)) {
-    console.error("Invalid or missing 'color' parameter in URL");
-} else {
-    const root = document.documentElement;
-    const shades = generateShades("#" + colorCode);
+Palate(colorCode)
 
-    // إضافة التدرجات كمتغيرات CSS بالاسماء المناسبة
-    Object.entries(shades).forEach(([key, value]) => {
-        root.style.setProperty(`--clr-${key}`, value);
-    });
+function Palate(color) {
+    // التحقق من اللون
+    console.log(
+        generateShades( color))
+        const root = document.documentElement;
+        const shades = generateShades( color);
+    
+        // إضافة التدرجات كمتغيرات CSS بالاسماء المناسبة
+        Object.entries(shades).forEach(([key, value]) => {
+            root.style.setProperty(`--clr-${key}`, value);
+        });
+    
+        // إضافة التدرجات الشفافة
+        root.style.setProperty(`--clr-900-25`, `${shades[900].replace("hsl", "hsla").replace(")", ", 0.25)")}`);
+        root.style.setProperty(`--clr-950-50`, `${shades[950].replace("hsl", "hsla").replace(")", ", 0.5)")}`);
+        root.style.setProperty(`--clr-950-75`, `${shades[950].replace("hsl", "hsla").replace(")", ", 0.75)")}`);
+    
+    
+        console.log("Generated shades:", shades);
 
-    // إضافة التدرجات الشفافة
-    root.style.setProperty(`--clr-900-25`, `${shades[900].replace("hsl", "hsla").replace(")", ", 0.25)")}`);
-    root.style.setProperty(`--clr-950-50`, `${shades[950].replace("hsl", "hsla").replace(")", ", 0.5)")}`);
-    root.style.setProperty(`--clr-950-75`, `${shades[950].replace("hsl", "hsla").replace(")", ", 0.75)")}`);
-
-
-    console.log("Generated shades:", shades);
-}
-
+}    
